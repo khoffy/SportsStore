@@ -2,7 +2,7 @@ import {Directive, Input, OnChanges, SimpleChanges, ViewContainerRef, TemplateRe
 
 
 @Directive({
-    selector: '[counterOf]'
+    selector: "[appCounterOf]"
 })
 export class CounterDirective implements OnChanges {
 
@@ -11,8 +11,8 @@ export class CounterDirective implements OnChanges {
             
         }
 
-        @Input('counterOf')
-        counter: number = 0;
+        @Input('appCounterOf')
+        counter = 0;
 
         ngOnChanges(changes: SimpleChanges) {
             this.container.clear();

@@ -11,7 +11,7 @@ export class ProductRepository {
         dataSource.getProducts().subscribe(data => {
             this.products = data;
             this.categories = data.map(p => p.category)
-                .filter((c, index, array) => array.indexOf(c) == index).sort() as string[];
+                .filter((c, index, array) => array.indexOf(c) === index).sort() as string[];
         });
     }
 
@@ -21,7 +21,7 @@ export class ProductRepository {
     }
 
     getProduct(id: number): Product {
-        return this.products.find(p => p.id == id)!;
+        return this.products.find(p => p.id === id)!;
     }
 
     getCategories(): string[] {
